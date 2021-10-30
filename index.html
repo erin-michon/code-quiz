@@ -7,22 +7,21 @@
     <title>Code-Quiz!</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the code quiz!</h1>
-        <div>Timer Will Be Here</div>
-    </header>
-
     <main>
-        <h2> Question will appear here</h2>
-        <ul>
-            <li>answer option</li>
-            <li>answer option</li>
-            <li>answer option</li>
-            <li>answer option</li>
-        </ul>
-        <button>Start</button>
+        <header>
+            <h1 class ="header">Welcome to the JavaScript code quiz!</h1>
+            <div class="timer" id="timer">Timer Will Be Here</div>
+        </header>
+
+        <form class="form">
+            <h2 class="question" id="question"></h2>
+
+            <ul class="answers" id="answers"></ul>
+
+            <!-- Start Quiz Button-->
+            <button class="btn" id="start-button">Start</button>
+        </form>
     </main>
-    
 
     <script src="./assets/js/script.js"></script>
 </body>
