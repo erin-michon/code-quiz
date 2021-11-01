@@ -4,13 +4,13 @@
 
 * Comments were added to the script.js file as pseudocode and organization purposes:
 
-![image info](./assets/images/timer.jpg)
+![image info](./assets/images/timer.JPG)
 
 
 * The questions were defined on a global scope for reference and use throughout by various functions:
 * An eventListener was utilized to initiate the the quiz and the timer:
 
-![image info](./assets/images/eventlisten.jpg)
+![image info](./assets/images/eventlisten.JPG)
 
 * Elements such as a div container and buttons were created dynamically:
 
