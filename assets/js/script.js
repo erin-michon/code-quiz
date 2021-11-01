@@ -22,58 +22,58 @@ let startBtn = document.querySelector("#start-button");
 
 //Start the timer at 100 seconds (or 100 points for high score)
 let time = 100
-//create a function that starts a countdown (in seconds)
+
+//create a function that starts displays the remaining time
 let countdown = function() {
     time--;
     if (time <= 0) {
         clearInterval(countdown);
         return;
     }
-    
     timerEl.innerHTML = time;
 }
 
+//create a function that starts the countdown (in seconds)
 let counter = function () {
     setInterval(countdown, 1000);
 }
 
-
 // define the different questions and answers/options for the quiz
 let myQuizQuestions = [
     {
+        question: "What can be passed into a function?",
+        answerA: "Parameters ",
+        answerB: "Arguements",
+        answerC: "Bananas",
+        correctAnswer: "b"
+    },
+    {
         question: "Do you know the answer?",
-        answerA: "right",
+        answerA: "wrong",
         answerB: "wrong",
-        answerC: "wrong",
+        answerC: "right",
+        correctAnswer: "c"
+    },
+    {
+        question: "Which of the following is a control flow statement?",
+        answerA: "A for Loop",
+        answerB: "Using an if statement",
+        answerC: "Defining the index of an array",
         correctAnswer: "a"
     },
     {
-        question: "Do you know the answer?",
-        answerA: "wrong",
-        answerB: "right",
-        answerC: "wrong",
+        question: "What does '===' mean when placed between two variables?",
+        answerA: "The variables are equal in type",
+        answerC: "The variables are equal in type and value ",
+        answerC: "The variables are equal in value",
         correctAnswer: "b"
     },
-    {
-        question: "Do you know the answer?",
-        answerA: "wrong",
-        answerB: "wrong",
-        answerC: "right",
-        correctAnswer: "c"
-    },
-    {
-        question: "Do you know the answer?",
-        answerA: "wrong",
-        answerB: "wrong",
-        answerC: "right",
-        correctAnswer: "c"
-    },
-    {
-        question: "Do you know the answer?",
-        answerA: "wrong",
-        answerB: "right",
-        answerC: "wrong",
-        correctAnswer: "b"
+    {   
+        question: "Which of the follow is used to denote comments in javaScript?",
+        answerA: "//",
+        answerB: "<!--",
+        answerC: "COMMENT:",
+        correctAnswer: "a"
     },
 ];
 
@@ -113,17 +113,21 @@ function showQuestions (event) {
     answersElC.className ="answer";
     containerEl.appendChild(answersElC);
 
+    console.log(currentQ.correctAnswer);
+
     //increase the current index by one for the next question
     currentQuestionIndex++;
 }
+
+//function for when answers are clicked
+
 
 // listen for the click of the start button
 startBtn.addEventListener("click", showQuestions);
 startBtn.addEventListener("click", counter);
 
 
-// countdown();
- 
+
     //listen for a click on any button
         //if false = subtract time
         //if true = next question
@@ -131,5 +135,3 @@ startBtn.addEventListener("click", counter);
     //high score = timer count when done with questions?
     //store high score and initials from user input in localStorage
 //call a function to load the high scores from localStorage at end of script file
-
-//add hide the start button after it is clicked
