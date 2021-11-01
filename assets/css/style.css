@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: rgb(101, 101, 175);
+    color: var(--grey);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  header {
+    text-align: center;
+    padding: 30px 25px;
+  }
+
+  .timer {
+      font-size: 40px;
+  }
+
+  .container {
+      flex:auto;
+      justify-content: space-between;
+  }
+
+  .question {
+      justify-content: center;
+  }
+
+  .answer {
+      flex:auto;
+      justify-content: space-around;
+      padding: 15px;
+      margin: 20px;
+      font-size: 20px;
+  }

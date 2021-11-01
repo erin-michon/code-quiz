@@ -31,49 +31,44 @@ let countdown = function() {
         return;
     }
     timerEl.innerHTML = time;
-}
+};
 
 //create a function that starts the countdown (in seconds)
 let counter = function () {
     setInterval(countdown, 1000);
-}
+};
 
 // define the different questions and answers/options for the quiz
 let myQuizQuestions = [
     {
         question: "What can be passed into a function?",
-        answerA: "Parameters ",
-        answerB: "Arguements",
+        answerA: "Arguements",
+        answerB: "Parameters",
         answerC: "Bananas",
-        correctAnswer: "b"
     },
     {
         question: "Do you know the answer?",
-        answerA: "wrong",
+        answerA: "right",
         answerB: "wrong",
-        answerC: "right",
-        correctAnswer: "c"
+        answerC: "wrong",
     },
     {
         question: "Which of the following is a control flow statement?",
         answerA: "A for Loop",
         answerB: "Using an if statement",
         answerC: "Defining the index of an array",
-        correctAnswer: "a"
     },
     {
         question: "What does '===' mean when placed between two variables?",
-        answerA: "The variables are equal in type",
-        answerC: "The variables are equal in type and value ",
+        answerA: "The variables are equal in type and value ",
+        answerB: "The variables are equal in type",
         answerC: "The variables are equal in value",
-        correctAnswer: "b"
     },
     {   
         question: "Which of the follow is used to denote comments in javaScript?",
-        answerA: "//",
-        answerB: "<!--",
-        answerC: "COMMENT:",
-        correctAnswer: "a"
+        answerA: " // ",
+        answerB: " << ",
+        answerC: " COMMENT: ",
     },
 ];
 
@@ -98,34 +93,50 @@ function showQuestions (event) {
     questionEl.className ="question";
     document.getElementById("container").appendChild(questionEl); 
 
-    let answersElA = document.createElement("div")
-    answersElA.innerHTML = "<h3 class='answer'>" + currentQ.answerA + "</h3>";
-    answersElA.className ="answer";
-    containerEl.appendChild(answersElA);
+    let answersBtnA = document.createElement("button")
+    answersBtnA.innerHTML = "<h3 class='answer'>" + currentQ.answerA + "</h3>";
+    answersBtnA.className ="answer";
+    containerEl.appendChild(answersBtnA);
 
-    let answersElB = document.createElement("div")
-    answersElB.innerHTML = "<h3 class='answer'>" + currentQ.answerB + "</h3>";
-    answersElB.className ="answer";
-    containerEl.appendChild(answersElB);
+    let answersBtnB = document.createElement("button")
+    answersBtnB.innerHTML = "<h3 class='answer'>" + currentQ.answerB + "</h3>";
+    answersBtnB.className ="answer";
+    containerEl.appendChild(answersBtnB);
 
-    let answersElC = document.createElement("div")
-    answersElC.innerHTML = "<h3 class='answer'>" + currentQ.answerC + "</h3>";
-    answersElC.className ="answer";
-    containerEl.appendChild(answersElC);
-
-    console.log(currentQ.correctAnswer);
+    let answersBtnC = document.createElement("button")
+    answersBtnC.innerHTML = "<h3 class='answer'>" + currentQ.answerC + "</h3>";
+    answersBtnC.className ="answer";
+    containerEl.appendChild(answersBtnC);
 
     //increase the current index by one for the next question
     currentQuestionIndex++;
-}
+
+};
+
 
 //function for when answers are clicked
+function userAnswerCorrect (event) {
+    event.preventDefault();
+
+    console.log("correct answer selected!")
+    console.log(time)
+};
+
+function userAnswerWrong (event) {
+    event.preventDefault();
+
+    console.log("wrong answer selected!")
+    console.log(time)
+};
 
 
 // listen for the click of the start button
 startBtn.addEventListener("click", showQuestions);
 startBtn.addEventListener("click", counter);
 
+// containerEl.addEventListener("click", answersBtnA, userAnswerCorrect);
+// containerEl.addEventListener("click", answersBtnB, userAnswerWrong);
+// containerEl.addEventListener("click", answersBtnC, userAnswerWrong);
 
 
     //listen for a click on any button
