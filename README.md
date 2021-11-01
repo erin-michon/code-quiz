@@ -2,36 +2,41 @@
 
 **This is a README fort the creation of a JavaScript quiz, developed using my newly acquired skills in the use of Web API's, JavaScript, CSS and HTML.  Some of the methods and skills I used are noted below:**
 
+* Comments were added to the script.js file as pseudocode and organization purposes:
 
-<!-- 
+![image info](./assets/images/timer.jpg)
 
-* Comments were added to the script.js file as pseudocode and organization purposes.
-* Arrays were defined on a global scope for refernce and use throughout the script:
 
-![image info](./assets/images/variables.JPG)
+* The questions were defined on a global scope for reference and use throughout by various functions:
+* An eventListener was utilized to initiate the the quiz and the timer:
 
-* An eventListener was utilized to initiate the generatePassword ().
-* An object was declared to store the user input:
+![image info](./assets/images/eventlisten.jpg)
 
-![image info](./assets/images/object.JPG)
+* Elements such as a div container and buttons were created dynamically:
 
-* If statments were used to help determined if the user selected specific criteria:
+![image info](./assets/images/dynEl.JPG)
 
-![image info](./assets/images/ifstatement.JPG)
+* A style sheet and basic CSS was added to the quiz:
 
-* The Math.random() was utilzied in selecting random characters from an array
-* The .concat() method and the .join() method were also used in the creation of the password
-* A For loop was utilzied to run a piece of code a specific amount of times:
-
-![image info](./assets/images/forloop.JPG)
-
-* A querySelector () method was utilized to display the final result on the browser
+![image info](./assets/images/cssex.JPG)
 
 
 ## Deployed Application
 
-* [Password Generator](https://github.com/erin-michon/password-generator/settings/pages)
+* [JavaScript Quiz](https://erin-michon.github.io/code-quiz/)
 
 
 ## Future Goals
-* Refactor the code -->
+* Obtain support and work to complete the full acceptance criteria shown below:
+
+    * GIVEN I am taking a code quiz
+    * WHEN I click the start button
+    * THEN a timer starts and I am presented with a question
+    * WHEN I answer a question
+    * THEN I am presented with another question
+    * WHEN I answer a question incorrectly
+    * THEN time is subtracted from the clock
+    * WHEN all questions are answered or the timer reaches 0
+    * THEN the game is over
+    * WHEN the game is over
+    * THEN I can save my initials and score

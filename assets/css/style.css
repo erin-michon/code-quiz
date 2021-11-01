@@ -40,3 +40,8 @@
       margin: 20px;
       font-size: 20px;
   }
+
+  button {
+      color:rgb(3, 11, 80);
+      background:rgb(29, 135, 161);
+  }

@@ -26,7 +26,7 @@ let time = 100
 //create a function that starts displays the remaining time
 let countdown = function() {
     time--;
-    if (time <= 0) {
+    if (time < 0) {
         clearInterval(countdown);
         return;
     }
@@ -72,8 +72,6 @@ let myQuizQuestions = [
     },
 ];
 
-//the eventhandler for the start button click
-//Question Rendering
 let lastQuestionIndex = myQuizQuestions.length - 1;
 let currentQuestionIndex = 0;
 
@@ -84,7 +82,6 @@ function showQuestions (event) {
 
     //change the DOM object to show the text/options from the first question
     //present the first question
-    //q is the object of the current question - as I will loop the pulling/creating of the question elements
     let currentQ = myQuizQuestions[currentQuestionIndex];
     console.log(currentQ);
 
@@ -111,38 +108,36 @@ function showQuestions (event) {
     //increase the current index by one for the next question
     currentQuestionIndex++;
 
+    //listen for a click on any button
+        //if false = subtract time
+        //if true = loop in next question for as long as there are questions remaining
 };
 
-
-//function for when answers are clicked
-function userAnswerCorrect (event) {
-    event.preventDefault();
-
-    console.log("correct answer selected!")
-    console.log(time)
-};
-
-function userAnswerWrong (event) {
-    event.preventDefault();
-
-    console.log("wrong answer selected!")
-    console.log(time)
-};
 
 
 // listen for the click of the start button
 startBtn.addEventListener("click", showQuestions);
 startBtn.addEventListener("click", counter);
 
-// containerEl.addEventListener("click", answersBtnA, userAnswerCorrect);
-// containerEl.addEventListener("click", answersBtnB, userAnswerWrong);
-// containerEl.addEventListener("click", answersBtnC, userAnswerWrong);
 
-
-    //listen for a click on any button
-        //if false = subtract time
-        //if true = next question
-        //continue while there are still questions?
-    //high score = timer count when done with questions?
+//Additional Pseudocode to review/conquer:
+    //high score = timer count when done with questions
     //store high score and initials from user input in localStorage
-//call a function to load the high scores from localStorage at end of script file
+    //call a function to load the high scores from localStorage at end of script file
+    
+
+
+// //function for when answers are clicked?
+// function userAnswerCorrect (event) {
+//     event.preventDefault();
+
+//     console.log("correct answer selected!")
+//     console.log(time)
+// };
+
+// function userAnswerWrong (event) {
+//     event.preventDefault();
+
+//     console.log("wrong answer selected!")
+//     console.log(time)
+// };
