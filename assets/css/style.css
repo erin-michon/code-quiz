@@ -18,6 +18,7 @@
   header {
     text-align: center;
     padding: 30px 25px;
+    margin: 50px;
   }
 
   .timer {
@@ -26,11 +27,18 @@
 
   .container {
       flex:auto;
+      text-align: center;
       justify-content: space-between;
   }
 
   .question {
       justify-content: center;
+  }
+
+  .question-container {
+    flex:auto;
+    text-align: center;
+    justify-content: space-between;
   }
 
   .answer {
@@ -41,7 +49,16 @@
       font-size: 20px;
   }
 
-  button {
-      color:rgb(3, 11, 80);
+  .btn {
+      color: rgb(54, 3, 54);
       background:rgb(29, 135, 161);
-  }
+      height: 75px;
+      width: 200px;    
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    button {
+        color:rgb(3, 11, 80);
+        background:rgb(29, 135, 161);
+    }
