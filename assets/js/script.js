@@ -11,8 +11,6 @@ let responseEl = document.querySelector("#response-container");
 let highscoreEl = document.querySelector("#highscores");
 let mainEl = document.querySelector("#page");
 
-// let highScoreArr = [];
-
 // QUIZ QUESTIONS AND ANSWERS
 let myQuizQuestions = [
     {
@@ -48,19 +46,14 @@ let myQuizQuestions = [
 ];
 let myQuizAnswers = ['Arguments', 'camelWalk', 'An if statement','The variables are equal in type and value', ' // '];
 
-//QUESTION INDEX VARIABLES
+//TIMER & QUESTION INDEX VARIABLES
 let lastQuestionIndex = myQuizQuestions.length - 1;
 let currentQuestionIndex = 0;
-
+let time = 100;
 
 // **  END PAGE VARIABLES **
 
-
 // ** START TIMER **
-// Start the timer at 100 seconds (or 100 points for high score)
-let time = 100;
-
-// TIMER FUNCTION: START AND DISPLAY CURRENT TIME
 function startTime() {
     countdown = setInterval(function() {
         timerEl.textContent = time;
@@ -84,7 +77,7 @@ function removeText() {
 
 
 
-// ** QUESTION CREATION AND DISPLAY
+// ** QUIZ FUNCTIONS **
 
 // Create and display initial question
 let showQuestions = function(event) {
@@ -185,16 +178,23 @@ let submitScore = function() {
     timerEl.innerHTML = "";
     mainEl.innerHTML = "";
 
-
     var allHighScores = JSON.parse(localStorage.getItem("highscore"));
     highscoreEl.innerHTML = "<h3>" + allHighScores.user + "  " + allHighScores.score + "</h3>";
+
+    let goBackBtn = document.createElement("button")
+    goBackBtn.innerHTML = "<h3>" + "Go Back to Quiz" + "</h3>";
+    goBackBtn.setAttribute("onclick", "https://erin-michon.github.io/code-quiz/")
+    mainEl.appendChild(goBackBtn);
 };
 
 
-// ** EVENT LISTENERS **
+// ** END QUIZ FUNCTIONS **
+
+
+// ** START EVENT LISTENERS **
 startBtn.addEventListener("click", showQuestions);
 startBtn.addEventListener("click", startTime);
 containerEl.addEventListener("click", nextQuestion);
 scoreBtn.addEventListener("click", submitScore);
 
-
+// ** END EVENT LISTENERS **
