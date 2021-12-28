@@ -9,21 +9,34 @@
 </head>
 <body>
     
-    <header class="header" id="header">
-        <h1 class ="title">Welcome to the JavaScript code quiz!</h1>
+    <header class="header" >
+        <h1 class ="title" id="header">Welcome to the JavaScript code quiz!</h1>
+        <div><p id="highscores"></p></div>
         <div class="timer" id="timer" >Good Luck!</div>
     </header>
 
-    <main>
+    <main id="page" class="page">
+       
+        <!-- Question container -->
         <div class="container" id="container">
-            <!-- div for question answer options should by dynamically created here -->
-
+            
         </div>
 
-        <!-- Start Quiz Button-->
+        <!-- Response container -->
+        <div class="response-container" id="response-container">
+           
+        </div>
+
+        <!-- Start Quiz Button -->
         <div>
-            <button class="btn" id="start-button" onclick="counter()">Start</button>
-        </div> 
+            <button class="btn" id="start-button">Start</button>
+        </div>
+        
+        <!-- Scores container -->
+        <div class="scores-container" id="scores-container">
+            <h3>Enter Your Initials<input type ="text" id ="initials"></h3>
+            <button class="btn-score" id="score-button"> Submit Your High Score </button>
+        </div>
 
     </main>
     
